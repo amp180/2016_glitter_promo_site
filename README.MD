@@ -2,7 +2,7 @@
 
 I made this site in early 2016 to help my little sister promote bottles of glitter she was selling.
 
-By the time I was done the mockup she'd gotten bored and drawn a poster instead. 
+By the time I was done the mockup she'd gotten bored and drawn a nice poster instead. 
 
 It has an interesting colour-rotating SVG of a bottle though.
 
