@@ -1,0 +1,118 @@
+// bower:scss
+// endbower
+
+html, body {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+$highlight: DeepSkyBlue;
+$accent: DarkOrchid;
+$main: #E75480;
+
+%screen-height {
+   min-height: 100vh;
+   height: 100%;
+}
+
+@media (min-width: 600px) {
+  %split-left--30 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+  }
+
+  %split-right--70 {
+      position: absolute;
+      top: 0;
+      left: 30%;
+      width: 70%;
+  }
+}
+
+%clearfix {
+    &:after {clear: both;};
+}
+
+%highlight-bg {
+    background-color: $highlight;
+}
+
+%accent-bg {
+    background-color: $accent;
+}
+
+%main-bg {
+    background-color: $main;
+}
+
+@media (max-width: 600px) {
+  .decoration-panel{
+   &:after{
+     position: relative;
+     top: calc(100vh -2em);
+     left: 50%;
+     width: 1em;
+     transform: translateX(-50%);
+     font-size: 2em;
+     content: "↓";
+     color: $highlight;
+    }
+  }
+}
+
+.decoration-panel {
+    @extend %split-left--30;
+    @extend %accent-bg;
+    @extend %screen-height;
+    margin-bottom: 0%;
+}
+
+.info-panel {
+    @extend %split-right--70;
+    @extend %clearfix;
+    @extend %main-bg;
+    @extend %screen-height;
+    &>* {
+      padding-top: 5%;
+      padding-left: 5%;
+      line-height: 2em;
+    }
+}
+
+@keyframes bottlecolors
+{
+  0%   {fill: red;}
+  25%  {fill: yellow;}
+  50%  {fill: lime;}
+  75%  {fill: cyan;}
+  100% {fill: red;}
+}
+
+#bottle {
+  width: 50%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+    #bottle {
+    display: table;
+    margin: auto auto;
+    padding-top: 5%;
+    padding-left: auto;
+  }
+}
+
+@media(min-width: 600px){
+  #bottle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+#bottle-path {
+    animation: bottlecolors 8s infinite;
+}
